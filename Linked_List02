@@ -1,4 +1,4 @@
-// LEETCODE PROBLEM :- 725 Split Linked List in Parts
+// LEETCODE PROBLEM :- 725 SPLIT LLINKED LIST IN PARTS
 class solution{
 public:
 vector <ListNode*> SplitListToParts(ListNode* Head, int k) {
