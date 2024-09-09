@@ -1,1 +1,37 @@
+// LEETCODE PROBLEM :- 725 Split Linked List in Parts
+class solution{
+public:
+vector <ListNode*> SplitListToParts(ListNode* Head, int k) {
 
+   vector<ListNode*> ans(k, nullptr);
+      // CALCULATE THE SIZE OF LINKED LIST
+      int count = 0;
+      ListNode* current = head;
+      while(current != nullptr){
+      count++;
+      current = current -> next;
+      }
+
+// CALCULATE THE NODES PER PART
+      int partSize = count / k;
+      int  extraNodes = count % k;
+
+// SPLIT THE LINKED LIST
+      current = head;
+      for(int i = 0; i < k && current; i++){
+      ans[i] = current;
+      int currentPartSize = partSize + (extraNodes > 0 ? 1 : 0);
+      extraNodes--;
+
+// MOVE TO THE END OF CURRENT PART
+      for(int j = 1; j < currentPartSize; j++){
+      current = current -> next;
+
+ // BREAK THE LINE FOR CURRENT PART
+      ListNode* nextPart = current->next;
+      current->next = nullptr;
+      current = nextPart;
+     }
+      return ans;
+  }
+};
