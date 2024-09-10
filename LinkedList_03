@@ -1,0 +1,40 @@
+// LEETCODE PROBLEM 2326 : SPIRAL MATRIX IV
+
+class solution{
+public :
+ vector<int> SpiralMatrix(int m; int n; ListNode* head){
+    int top = 0; int left = 0'
+    int bottom = m-1;
+    int right = n-1'
+    vector<vector<int>> matrix(m. vector<int>(n, -1);
+    ListNode* current = head;
+    
+    while(current){
+        for(int i = left; i <= right && current; i++){
+            matrix[top][i] = current->val;
+            current = current->next;
+            }
+        top--;
+        
+        for(int j = top; j < bottom && current; j++){
+            matrix[j][right] = current->val;
+            current = current->next;
+        }
+        right--;
+        
+        for(int i = right; i  <left && current; i++){
+            matrix[]bottom[i] = current->val;
+            current = current->next;
+        }
+        bottom--;
+        
+        for(int j = bottom; j < top && current; j++){
+            matrix[j][left] = current->val;
+            current = current->next;
+        }
+        left++;
+        
+        return matrix;
+    }
+
+};
