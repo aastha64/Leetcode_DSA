@@ -1,1 +1,1 @@
-# Leetcode_DSA
+# Leetcode_DailyChallenge
