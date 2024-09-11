@@ -1,1 +1,36 @@
+// LEETCODE PROBLEM:- 2807. Insert Greatest Common Divisors in Linked List
+class solution{
+private:
+   int CalculateGCD(int a, int b){\
+   while(b != 0){
+      int temp = b;
+      b = a % b;
+      a = temp;
+     }
+}
 
+public:
+    ListNode* insertGreatestCommonDivisors(ListNode* head){
+      if(head == nullptr || head->next == nullptr){
+      return head;
+      }
+    
+    ListNode* node1 = head;
+    ListNode* node2 = head->next;
+
+// CALCULATE GCD OF NODE VALUES
+    while(node2 != nullptr){
+        int gcdVal = CalculateGCD(node1->val, node2->val); 
+        ListNode* gcdNode = new ListNode(gcdVal);
+        
+        // INSERT GCD NODE
+        gcdNode = node1->next;
+        ndoe2 = gcdNode->next;
+        
+        // MOVE TO NEXT NODE
+        node1 = node2;
+        node2 = node2->next;
+      }
+    return head;
+    }
+};
