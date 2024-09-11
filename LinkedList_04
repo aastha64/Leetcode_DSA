@@ -7,6 +7,7 @@ private:
       b = a % b;
       a = temp;
      }
+  return a;
 }
 
 public:
