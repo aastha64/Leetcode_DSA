@@ -23,6 +23,7 @@ public:
             } else {
                 res[k] = pre[j] ^ pre[i - 1];
             }
+
         }
         
         return res;
