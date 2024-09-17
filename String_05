@@ -1,0 +1,38 @@
+// LEETCODE PROBLEM : 884. Uncommon Words from Two Sentences
+class Solution {
+public:
+    vector<string> uncommonFromSentences(string s1, string s2) {
+        unordered_map<string, int> mp;
+        int n = s1.size();
+        int i = 0;
+        while(i < n){
+            string t = "";
+            while(i < n && s1[i] != ' '){
+                t += s1[i];
+                i++;
+            }
+            i++;
+            mp[t]++;
+        }
+
+        int m = s2.size();
+        int j =0;
+        while(j < m){
+            string s = "";
+            while(j < m && s2[j] != ' '){
+                s += s2[j];
+                j++;
+            }
+            j++;
+            mp[s]++;
+        }
+
+        vector<string> ans;
+        for(auto it : mp){
+            if(it.second == 1){
+                ans.push_back(it.first);
+            } 
+        }
+       return ans;
+    }
+};
